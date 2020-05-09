@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    ports:
+      - "${HTTP4S_PORT:-80}:8080"
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    driver: bridge
