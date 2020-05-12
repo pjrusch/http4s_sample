@@ -13,6 +13,8 @@ services:
     image: mongo:4.2
     networks:
       - backend
+    volumes:
+      - "${MONGO_DATA_PATH:-/opt/mongo/data}:/data/db"
 
 networks:
   frontend:
